@@ -13,8 +13,9 @@ export default function About() {
           <div>
             <div className="flex items-right justify-center gap-2 md:gap-8">
               <Link href="/"> Home</Link>
-              <Link href="/pdf/RESUME_AMARBOLD-OTGONBAATAR.pdf">Resume</Link>
+              <Link href="cv">Resume</Link>
               <Link href="contact"> Contact</Link>
+              <Link href="home"> Home</Link>
             </div>
           </div>
         </div>
