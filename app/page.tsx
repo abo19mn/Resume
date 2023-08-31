@@ -93,11 +93,6 @@ export default function About() {
                     <strong>Tokyo Japanese Language Education Center </strong>
                     <p>One-year advanced academic program</p>
                   </div>
-                  <strong className="col-start-1">2015-2017</strong>
-                  <div className="col-start-2 col-end-6">
-                    <strong>Ider University</strong>
-                    <p>The Department of Computer Science</p>
-                  </div>
                 </div>
               </div>
             </div>
