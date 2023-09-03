@@ -1,28 +1,36 @@
 "use client";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import Link from "next/link";
-import ProgressBar from "react-bootstrap/ProgressBar";
+import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
+import ProgressBar from "react-bootstrap/esm/ProgressBar";
+import Header from "./header/page";
 
-export default function About() {
+export default function Home() {
+  const t = useTranslations("Translation");
+
+  const [open, setOpen] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const handleDropDownFocus = (state: boolean) => {
+    setOpen(!state);
+  };
+  const handleClickOutsideDropdown = (e: any) => {
+    if (open && !dropdownRef.current?.contains(e.target as Node)) {
+      setOpen(false);
+    }
+  };
+
+  window.addEventListener("click", handleClickOutsideDropdown);
+
+  console.log(open);
+
   return (
-    <section className="text-gray-400 bg-gray-900 body-font overflow-hidden">
-      <header>
-        <div className="container mx-auto flex justify-between items-center border-b-2 px-6 py-2 h-24">
-          <h1 className="font-bold">ABO</h1>
-          <div>
-            <div className="flex items-right justify-center gap-2 md:gap-8">
-              <Link href="/"> Home</Link>
-              <Link href="/pdf/RESUME_AMARBOLD-OTGONBAATAR.pdf">Resume</Link>
-              <Link href="contact"> Contact</Link>
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="text-gray-400 bg-gray-900 body-font overflow-hidden">
+      <Header />
       <div className="container px-5 py-24 mx-auto">
         <div className="-my-8 divide-y-2 divide-gray-800">
-          <div className="py-8 flex flex-wrap md:flex-nowrap">
-            <div className="md:w-64 md:mb-0 mb-6">
+          <div className="py-8 flex flex-wrap md:flex-nowrap justify-center">
+            <div className="md:w-64 md:mb-0 mb-6 ">
               <div
                 style={{
                   borderRadius: "50%",
@@ -34,34 +42,33 @@ export default function About() {
               >
                 <img src="/images/abo.jpg" placeholder="blur" />
               </div>
-              About.h
             </div>
-            <div className="md:flex-grow">
+            <div className="md:flex-grow justify-center">
               <h2 className="text-4xl font-medium text-white title-font mb-2">
-                Otgonbaatar Amarbold
+                {t("home")}
               </h2>
               <strong className="text-2xl leading-relaxed">
                 Front-end Developer / Electronic engineer
               </strong>
             </div>
           </div>
-          <div className="py-8 flex flex-wrap md:flex-nowrap">
+          <div className="py-8 sm:flex md:flex-nowrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-              <span className="font-semibold title-font text-white">
+              <span className="font-semibold title-font text-white sm:visibility-hidden">
                 About Me
               </span>
             </div>
-            <div className="md:flex-grow">
+            <div className="md:flex-grow flex:wrap">
               <h2 className="text-2xl font-medium text-white title-font mb-2">
                 Personal information
               </h2>
-              <p className="leading-relaxed">
-                Glossier echo park pug,
-                c12312312312c12312312312c12312312312c12312312312c12312312312c12312312312c12312312312
+              <p className="leading-relaxed sm:flex-wrap">
+                {t("personalSentence")}
               </p>
             </div>
           </div>
-          <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+
+          <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap sm:flex-wrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col font-semibold title-font text-white">
               Education
             </div>
@@ -97,18 +104,18 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
+          <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap sm:flex-wrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white">
                 Language Skill
               </span>
             </div>
             <div className="md:flex-grow">
-              <h2 className="text-2xl font-medium text-white title-font mb-2">
+              <h2 className="text-2xl font-medium text-white title-font mb-4">
                 Language Skill
               </h2>
               <div className="leading-relaxed">
-                <div className="grid grid-cols-4 gap-3">
+                <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-3">
                   <strong className="col-start-1">Mongolian</strong>
                   <strong className="col-start-2 col-end-6">Native</strong>
                   <strong className="col-start-1">Japanese</strong>
@@ -128,21 +135,21 @@ export default function About() {
               </span>
             </div>
             <div className="md:flex-grow">
-              <h2 className="text-2xl font-medium text-white title-font mb-2">
+              <h2 className="text-2xl font-medium text-white title-font mb-4">
                 Programming language
               </h2>
               <div className="leading-relaxed">
-                <div className="grid grid-cols-4 gap-3">
-                  <strong className="col-start-1">HTML,CSS</strong>
+                <div className="grid lg:grid-cols-4 gap-3 sm :grid grid-cols-2 gap-3}">
+                  <div className="col-start-1">HTML,CSS</div>
                   <div className="col-start-2 col-end-4">
                     <ProgressBar now={80} />{" "}
                   </div>
 
-                  <strong className="col-start-1">Javascript</strong>
+                  <div className="col-start-1">Javascript</div>
                   <div className="col-start-2 col-end-4">
                     <ProgressBar now={65} />{" "}
                   </div>
-                  <strong className="col-start-1">ReactJs</strong>
+                  <div className="col-start-1">ReactJs</div>
                   <strong className="col-start-2 col-end-4">
                     {" "}
                     <ProgressBar now={70} />{" "}
@@ -151,56 +158,58 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
-            <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+          <div className="py-8 flex flex-wrap flex-col md:flex-row">
+            <div className="w-full md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white">
                 Personal mentors
               </span>
             </div>
             <div className="md:flex-grow">
-              <h2 className="text-2xl font-medium text-white title-font mb-2">
+              <h2 className="text-2xl font-medium text-white title-font mb-5">
                 Personal mentors
               </h2>
-              <div className="grid grid-cols-4 gap-3">
-                <div
-                  style={{
-                    borderRadius: "50%",
-                    overflow: "hidden",
-                    width: "150px",
-                    height: "150px",
-                  }}
-                >
-                  <img src="/images/Khangal.png" placeholder="blur" />
-                </div>
-                <div className="col-start-2 col-end-6">
-                  <strong>Khangal </strong>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {/* Mentor 1 */}
+                <div className="flex flex-col items-center text-center">
+                  <div
+                    style={{
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      width: "150px",
+                      height: "150px",
+                    }}
+                  >
+                    <img src="/images/Khangal.png" alt="Mentor 1" />
+                  </div>
+                  <strong className="mt-2">Khangal</strong>
                   <p className="leading-relaxed">
-                    Senior back-end at AND Denode LLC <br /> CTO at AND Irbis
-                    Ventures Pte.
+                    Senior back-end at AND Denode LLC
+                    <br />
+                    CTO at AND Irbis Ventures Pte.
                   </p>
                 </div>
-                <div
-                  className="col-start-1"
-                  style={{
-                    borderRadius: "50%",
-                    overflow: "hidden",
-                    width: "150px",
-                    height: "150px",
-                  }}
-                >
-                  <img src="/images/Setgel.png" placeholder="blur" />
-                </div>
-                <div className="col-start-2 col-end-6">
-                  <strong>Setgel </strong>
+                {/* Mentor 2 */}
+                <div className="flex flex-col items-center text-center">
+                  <div
+                    style={{
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      width: "150px",
+                      height: "150px",
+                    }}
+                  >
+                    <img src="/images/Setgel.png" alt="Mentor 2" />
+                  </div>
+                  <strong className="mt-2">Setgel</strong>
                   <p className="leading-relaxed">
                     Front-end, Mobile Developer at Mezorn LLC
                   </p>
-                </div>{" "}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

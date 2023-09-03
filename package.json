@@ -12,22 +12,30 @@
     "@emotion/react": "^11.11.1",
     "@mantine/core": "^6.0.19",
     "@mantine/hooks": "^6.0.19",
-    "@react-pdf/renderer": "^3.1.12",
     "@types/node": "20.5.7",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "bootstrap": "^5.3.1",
+    "bootstrap-icons": "^1.10.5",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "flag-icons": "^6.11.0",
     "next": "13.4.19",
     "next-intl": "^2.20.0",
     "nextjs-progressbar": "^0.0.16",
+    "nodemailer": "^6.9.4",
     "postcss": "8.4.28",
     "react": "18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.0",
+    "react-icons": "^4.10.1",
+    "react-query": "^3.39.3",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.9"
   }
 }

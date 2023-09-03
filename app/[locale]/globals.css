@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+} */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.App {
+  display: grid;
+  place-content: center;
+  height: 100%;
+  width: 100%;
+}
+.app-drop-down-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.app-drop-down-container button {
+  padding: 15px 20px;
+  box-shadow: 0 0 25px -20px #dbdbdb;
+  flex: 1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
+  /* border: .3px solid #919191; */
+}
+
+.app-drop-down-container ul {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: calc(100% + 5px);
+  min-width: 100%;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  /* padding: 10px; */
+  border-radius: 4px;
+  box-shadow: 0 0 5px #d4d4d4;
+  list-style: none;
+}
+
+.app-drop-down-container ul li{
+  background-color:gray-900;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color ease .2s;
+}
+.app-drop-down-container ul li:hover{
+  background-color: #000000;
+  color: #fcfcfc;
+}
