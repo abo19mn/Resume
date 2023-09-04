@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 
 export default createMiddleware({
   // A list of all locales that are supported
-  locales: ['en'],
+  locales: ['en', 'jp', 'mn'],
  
   // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
   defaultLocale: 'en'

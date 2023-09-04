@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Header from "../header/page";
 import { useFormatter, useTranslations } from "next-intl";
+import "./../globals.css";
 
 const Contact: React.FC = () => {
   const t = useTranslations("Translation");
@@ -40,16 +41,13 @@ const Contact: React.FC = () => {
                   {t("contactMe")}
                 </h2>
                 <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-                  ADDRESS
+                  {t("address")}
                 </h2>
-                <p className="mt-1">
-                  Mongolia, Ulaanbaatar, Sukhbaatar District 1st khoroo,
-                  Monhouse 40-63
-                </p>
+                <p className="mt-1">{t("addressInfo")}</p>
                 {/* </div> */}
                 {/* <div className="lg:w-1/2 px-6 mt-4 lg:mt-0"> */}
                 <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-                  EMAIL
+                  {t("email")}
                 </h2>
                 <a
                   href="mailto:abo19mn@email.com?&subject=$name&body=message"
@@ -58,7 +56,7 @@ const Contact: React.FC = () => {
                   abo19mn@gmail.com
                 </a>
                 <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-                  PHONE
+                  {t("phone")}
                 </h2>
                 <p className="leading-relaxed">+976-94678494</p>
               </div>
@@ -71,7 +69,7 @@ const Contact: React.FC = () => {
                   htmlFor="name"
                   className="leading-7 text-sm text-gray-400"
                 >
-                  Name
+                  {t("nameContact")}
                 </label>
                 <input
                   type="text"
@@ -87,7 +85,7 @@ const Contact: React.FC = () => {
                   htmlFor="email"
                   className="leading-7 text-sm text-gray-400"
                 >
-                  Email
+                  {t("emailContact")}
                 </label>
                 <input
                   type="email"
@@ -101,7 +99,7 @@ const Contact: React.FC = () => {
                   htmlFor="message"
                   className="leading-7 text-sm text-gray-400"
                 >
-                  Message
+                  {t("messageContact")}
                 </label>
                 <textarea
                   id="message"
@@ -116,7 +114,7 @@ const Contact: React.FC = () => {
                 id="EmailButton"
                 onClick={sendEmail}
               >
-                Send message
+                {t("send")}
               </button>
             </form>
           </div>

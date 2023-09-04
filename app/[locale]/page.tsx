@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import ProgressBar from "react-bootstrap/esm/ProgressBar";
 import Header from "./header/page";
+import "./globals.css";
 
 export default function Home() {
   const t = useTranslations("Translation");
@@ -45,7 +46,7 @@ export default function Home() {
             </div>
             <div className="md:flex-grow justify-center">
               <h2 className="text-4xl font-medium text-white title-font mb-2">
-                {t("home")}
+                {t("name")}
               </h2>
               <strong className="text-2xl leading-relaxed">
                 Front-end Developer / Electronic engineer
@@ -55,12 +56,12 @@ export default function Home() {
           <div className="py-8 sm:flex md:flex-nowrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white sm:visibility-hidden">
-                About Me
+                {t("aboutMe")}
               </span>
             </div>
             <div className="md:flex-grow flex:wrap">
               <h2 className="text-2xl font-medium text-white title-font mb-2">
-                Personal information
+                {t("personalInformation")}
               </h2>
               <p className="leading-relaxed sm:flex-wrap">
                 {t("personalSentence")}
@@ -70,35 +71,31 @@ export default function Home() {
 
           <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap sm:flex-wrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col font-semibold title-font text-white">
-              Education
+              {t("education")}
             </div>
             <div className="md:flex-grow">
               <h2 className="text-2xl font-medium text-white title-font mb-2">
-                Education History
+                {t("educationHistory")}
               </h2>
               <div className="leading-relaxed">
                 <div className="grid grid-cols-4 gap-3">
                   <strong className="col-start-1">2021-2023</strong>
                   <div className="col-start-2 col-end-6">
-                    <strong>Gunma University</strong>
-                    <p>
-                      The Department of Electronic and Electrical Engineering
-                    </p>
+                    <strong>{t("gundai")} </strong>
+                    <p>{t("gundaiGakka")}</p>
                   </div>
                   <strong className="col-start-1">2018-2021</strong>
                   <div
                     className="col-start-2 col-end-6"
                     style={{ marginTop: "10px" }}
                   >
-                    <strong>
-                      National Institute of Technology Tokyo College
-                    </strong>
-                    <p>The Department of Electrical Engineering</p>
+                    <strong>{t("kosen")}</strong>
+                    <p>{t("kosenGakka")}</p>
                   </div>
                   <strong className="col-start-1">2017-2018</strong>
                   <div className="col-start-2 col-end-6">
-                    <strong>Tokyo Japanese Language Education Center </strong>
-                    <p>One-year advanced academic program</p>
+                    <strong>{t("jasso")} </strong>
+                    <p>{t("jassoGakka")}</p>
                   </div>
                 </div>
               </div>
@@ -107,22 +104,26 @@ export default function Home() {
           <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap sm:flex-wrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white">
-                Language Skill
+                {t("language")}
               </span>
             </div>
             <div className="md:flex-grow">
               <h2 className="text-2xl font-medium text-white title-font mb-4">
-                Language Skill
+                {t("language")}
               </h2>
               <div className="leading-relaxed">
                 <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-3">
-                  <strong className="col-start-1">Mongolian</strong>
-                  <strong className="col-start-2 col-end-6">Native</strong>
-                  <strong className="col-start-1">Japanese</strong>
-                  <strong className="col-start-2 col-end-6">Fluent</strong>
-                  <strong className="col-start-1">English</strong>
+                  <strong className="col-start-1">{t("mongolian")}</strong>
                   <strong className="col-start-2 col-end-6">
-                    Upper intermediate
+                    {t("native")}
+                  </strong>
+                  <strong className="col-start-1">{t("japanese")}</strong>
+                  <strong className="col-start-2 col-end-6">
+                    {t("fluent")}
+                  </strong>
+                  <strong className="col-start-1">{t("english")}</strong>
+                  <strong className="col-start-2 col-end-6">
+                    {t("upper")}
                   </strong>
                 </div>
               </div>
@@ -131,12 +132,12 @@ export default function Home() {
           <div className="py-8 flex border-t-2 border-gray-800 flex-wrap md:flex-nowrap">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white">
-                Professional skill
+                {t("professional")}
               </span>
             </div>
             <div className="md:flex-grow">
               <h2 className="text-2xl font-medium text-white title-font mb-4">
-                Programming language
+                {t("programmingLanguage")}
               </h2>
               <div className="leading-relaxed">
                 <div className="grid lg:grid-cols-4 gap-3 sm :grid grid-cols-2 gap-3}">
@@ -161,12 +162,12 @@ export default function Home() {
           <div className="py-8 flex flex-wrap flex-col md:flex-row">
             <div className="w-full md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white">
-                Personal mentors
+                {t("personalMentors")}
               </span>
             </div>
             <div className="md:flex-grow">
               <h2 className="text-2xl font-medium text-white title-font mb-5">
-                Personal mentors
+                {t("personalMentors")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Mentor 1 */}

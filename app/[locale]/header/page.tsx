@@ -1,10 +1,13 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { AiOutlineGlobal } from "react-icons/ai";
 
 export default function Header() {
+  const t = useTranslations("Translation");
+
   const [open, setOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const handleDropDownFocus = (state: boolean) => {
@@ -22,7 +25,9 @@ export default function Header() {
 
   return (
     <div className="container mx-auto flex justify-between items-center border-b-2 px-6 py-2 h-24">
-      <h1 className="font-bold">ABO</h1>
+      <h1 className="font-bold display:none sm:visible md:visible lg:visible">
+        ABO
+      </h1>
       <div className="flex items-center justify-bottom gap-2 md:gap-8">
         <Link
           href="/"
@@ -32,20 +37,20 @@ export default function Header() {
           }}
         >
           {" "}
-          Home
+          {t("home")}
         </Link>
         <Link
           href="/pdf/RESUME_AMARBOLD-OTGONBAATAR.pdf "
           style={{ color: "rgb(156, 163, 175)", textDecoration: "none" }}
         >
-          Resume
+          {t("resume")}
         </Link>
         <Link
           href="contact"
           style={{ color: "rgb(156, 163, 175)", textDecoration: "none" }}
         >
           {" "}
-          Contact
+          {t("contact")}
         </Link>
         <div className="App">
           <div className="app-drop-down-container" ref={dropdownRef}>

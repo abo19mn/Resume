@@ -33,6 +33,7 @@
         "phone": "Phone",
         "nameContact": "Name",
         "emailContact": "Email",
-        "messageContact": "Message"
+        "messageContact": "Message",
+        "send": "Send message"
 
     }}
