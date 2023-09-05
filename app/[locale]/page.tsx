@@ -53,7 +53,7 @@ export default function Home() {
               </strong>
             </div>
           </div>
-          <div className="py-8 sm:flex md:flex-nowrap">
+          <div className="py-8 sm:flex flex-nowrap md:flex">
             <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
               <span className="font-semibold title-font text-white sm:visibility-hidden">
                 {t("aboutMe")}
@@ -63,7 +63,7 @@ export default function Home() {
               <h2 className="text-2xl font-medium text-white title-font mb-2">
                 {t("personalInformation")}
               </h2>
-              <p className="leading-relaxed sm:flex-wrap">
+              <p className="leading-relaxed flex-nowrap sm:flex-wrap md:flex-nowrap">
                 {t("personalSentence")}
               </p>
             </div>
