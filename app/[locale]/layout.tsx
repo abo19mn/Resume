@@ -22,16 +22,12 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: any };
 }) {
-  console.log("layoutr render");
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    console.log(error);
     notFound();
   }
-
-  console.log(messages, "(asdkasjd");
 
   return (
     <html lang={locale}>

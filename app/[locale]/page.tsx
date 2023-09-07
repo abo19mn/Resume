@@ -10,20 +10,18 @@ import "./globals.css";
 export default function Home() {
   const t = useTranslations("Translation");
 
-  const [open, setOpen] = useState<boolean>(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const handleDropDownFocus = (state: boolean) => {
-    setOpen(!state);
-  };
-  const handleClickOutsideDropdown = (e: any) => {
-    if (open && !dropdownRef.current?.contains(e.target as Node)) {
-      setOpen(false);
-    }
-  };
+  // const [open, setOpen] = useState<boolean>(false);
+  // const dropdownRef = useRef<HTMLDivElement>(null);
+  // const handleDropDownFocus = (state: boolean) => {
+  //   setOpen(!state);
+  // };
+  // const handleClickOutsideDropdown = (e: any) => {
+  //   if (open && !dropdownRef.current?.contains(e.target as Node)) {
+  //     setOpen(false);
+  //   }
+  // };
 
-  window.addEventListener("click", handleClickOutsideDropdown);
-
-  console.log(open);
+  // window.addEventListener("click", handleClickOutsideDropdown);
 
   return (
     <div className="text-gray-400 bg-gray-900 body-font overflow-hidden">

@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { AiOutlineGlobal } from "react-icons/ai";
 import "./../globals.css";
 
@@ -20,7 +20,13 @@ export default function Header() {
     }
   };
 
-  window.addEventListener("click", handleClickOutsideDropdown);
+  useEffect(() => {
+    window.addEventListener("click", handleClickOutsideDropdown);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutsideDropdown);
+    };
+  });
 
   console.log(open);
 

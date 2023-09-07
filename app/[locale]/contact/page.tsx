@@ -12,6 +12,8 @@ const Contact: React.FC = () => {
   const [subject, setSubject] = useState("");
   const [body, setBody] = useState("");
 
+  // typeof window !== 'undefined;
+
   const handleSubjectChange = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
@@ -25,8 +27,14 @@ const Contact: React.FC = () => {
   };
 
   const sendEmail = () => {
-    const mailtoLink = `mailto:abo19mn@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    if (typeof window !== "undefined") {
+      const mailtoLink = `mailto:abo19mn@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+    } else {
+      console.error(
+        "window is not defined. This code is not running in a browser environment."
+      );
+    }
   };
 
   return (
