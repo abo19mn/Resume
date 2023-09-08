@@ -39,7 +39,7 @@ export default function Home() {
                 }}
                 className="md:w-64 md:mb-0 mb-6"
               >
-                <img src="/images/abo.jpg" placeholder="blur" />
+                <img src="/images/abo.png" placeholder="blur" />
               </div>
             </div>
             <div className="md:flex-grow justify-center">
