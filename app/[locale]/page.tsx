@@ -153,6 +153,11 @@ export default function Home() {
                     {" "}
                     <ProgressBar now={70} />{" "}
                   </strong>
+                  <div className="col-start-1">NextJs</div>
+                  <strong className="col-start-2 col-end-4">
+                    {" "}
+                    <ProgressBar now={40} />{" "}
+                  </strong>
                 </div>
               </div>
             </div>
